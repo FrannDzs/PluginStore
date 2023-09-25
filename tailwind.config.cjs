@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
+  content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -168,10 +168,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ['"RoobertPRO"', '"RoobertPRO override"', 'sans-serif']
-      },
+      }
     }
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ]
-};
+  plugins: [require('@tailwindcss/typography')]
+}

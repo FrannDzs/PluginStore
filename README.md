@@ -1,8 +1,9 @@
-PluginStore
-===
+# PluginStore
+
 The Official Pengu Plugin Store.
 
 ### Features
+
 - [x] Nuxt3 design, powered by [SolidStart].
 - [x] Awesome collection of plugins and themes.
 - [ ] Easy installation with a single click.
@@ -27,6 +28,7 @@ pnpm dev
 ```
 
 To add a new plugin, just update the `registry/plugins.yml`
+
 ```yaml
 plugins:
   ...
@@ -34,7 +36,7 @@ plugins:
     slug: your-awesome-plugin
     description: ...
     # should follow the existing plugins
-  ... 
+  ...
 ```
 
 ## Building

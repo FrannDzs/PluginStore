@@ -2,20 +2,20 @@
 import { Suspense, createEffect, createSignal } from "solid-js";
 import { isServer } from "solid-js/web";
 import {
-Body,
-ErrorBoundary,
-FileRoutes,
-Head,
-Html,
-Meta,
-Routes,
-Scripts,
-Title,
-Link,
-useIsRouting,
+  Body,
+  ErrorBoundary,
+  FileRoutes,
+  Head,
+  Html,
+  Meta,
+  Routes,
+  Scripts,
+  Title,
+  Link,
+  useIsRouting,
 } from "solid-start";
 
-import nprogress from 'nprogress';
+import nprogress from "nprogress";
 import { Layout } from "./components/Layout";
 import { themeScript } from "./lib/theme";
 
@@ -30,7 +30,7 @@ export default function Root() {
     createEffect(() => {
       nprogress.configure({
         minimum: 0.1,
-        showSpinner: false
+        showSpinner: false,
       });
 
       if (isRouting() && !loading()) {

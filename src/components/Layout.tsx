@@ -1,7 +1,7 @@
-import { children } from 'solid-js';
-import { Header } from './Header';
-import { SpriteMap } from './SpriteMap';
-import { Footer } from './Footer';
+import { children } from "solid-js";
+import { Header } from "./Header";
+import { SpriteMap } from "./SpriteMap";
+import { Footer } from "./Footer";
 
 export function Layout(props: ChildrenProp) {
   const resolved = children(() => props.children);
@@ -12,5 +12,5 @@ export function Layout(props: ChildrenProp) {
       {resolved()}
       <Footer />
     </main>
-  )
+  );
 }

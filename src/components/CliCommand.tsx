@@ -1,5 +1,4 @@
 export function CliCommand(props: { command: string }) {
-
   const click = () => {
     navigator.clipboard.writeText(props.command);
   };
@@ -12,15 +11,15 @@ export function CliCommand(props: { command: string }) {
       >
         <span class="sr-only">Click to copy</span>
         <code class="flex items-center gap-2">
-          <svg class="w-4 h-4"><use href="#terminal" /></svg>
+          <svg class="w-4 h-4">
+            <use href="#terminal" />
+          </svg>
           {props.command}
         </code>
-      </button >
-      <span
-        class="absolute bottom-[1.5rem] right-[0.5rem] transition-opacity opacity-0 copy-confirmation pointer-events-none"
-      >
+      </button>
+      <span class="absolute bottom-[1.5rem] right-[0.5rem] transition-opacity opacity-0 copy-confirmation pointer-events-none">
         Copied!
       </span>
     </>
-  )
+  );
 }
