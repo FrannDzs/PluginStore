@@ -1,16 +1,15 @@
-import { Show, createResource } from 'solid-js';
+import { Show, createResource } from "solid-js";
 
 interface Props {
-  plugin: IPlugin
+  plugin: IPlugin;
 }
 
 export function PluginStats(props: Props) {
-
-  let avatar = '';
-  let stars = props.plugin.stars ?? '-';
-  let downloads = props.plugin.downloads || '-';
-  if (typeof downloads === 'number' && downloads >= 1000) {
-    downloads = (downloads / 1000).toFixed(1) + 'k';
+  let avatar = "";
+  let stars = props.plugin.stars ?? "-";
+  let downloads = props.plugin.downloads || "-";
+  if (typeof downloads === "number" && downloads >= 1000) {
+    downloads = (downloads / 1000).toFixed(1) + "k";
   }
 
   const author = props.plugin.author;
@@ -35,26 +34,48 @@ export function PluginStats(props: Props) {
   return (
     <div class="mt-4 mb-2 flex items-center justify-between">
       <span class="text-right flex items-center">
-        <Show when={avatar} fallback={<svg class="inline w-6 h-6"><use href="#icon-github" /></svg>}>
+        <Show
+          when={avatar}
+          fallback={
+            <svg class="inline w-6 h-6">
+              <use href="#icon-github" />
+            </svg>
+          }
+        >
           <picture class="object-cover">
-            <img src={avatar} width="24" height="24" class="rounded-full pointer-events-none" />
+            <img
+              src={avatar}
+              width="24"
+              height="24"
+              class="rounded-full pointer-events-none"
+            />
           </picture>
         </Show>
-        <span class="ml-2">
-          {author.name}
-        </span>
+        <span class="ml-2">{author.name}</span>
       </span>
       <span class="flex items-center">
         <Show when={props.plugin.auto_update}>
-          <svg class="w-4 h-4 inline"><use href="#icon-verified" /></svg><span class="mx-1">auto-update</span>
+          <svg class="w-4 h-4 inline">
+            <use href="#icon-verified" />
+          </svg>
+          <span class="mx-1">auto-update</span>
         </Show>
-        <svg class="w-4 h-4 inline ml-2"><use href="#icon-star" /></svg><span class="mx-1">{stars}</span>
-        <svg class="w-4 h-4 inline ml-2"><use href="#icon-heart" /></svg><span class="mx-1">{props.plugin.hearts}</span>
-        <svg class="w-4 h-4 inline ml-2"><use href="#icon-download" /></svg><span class="mx-1">{downloads}</span>
+        <svg class="w-4 h-4 inline ml-2">
+          <use href="#icon-star" />
+        </svg>
+        <span class="mx-1">{stars}</span>
+        <svg class="w-4 h-4 inline ml-2">
+          <use href="#icon-heart" />
+        </svg>
+        <span class="mx-1">{props.plugin.hearts}</span>
+        <svg class="w-4 h-4 inline ml-2">
+          <use href="#icon-download" />
+        </svg>
+        <span class="mx-1">{downloads}</span>
         {/* <Show when={npmDownloads()}>
           <span class="text-green-500">+{npmDownloads()}</span>
         </Show> */}
       </span>
     </div>
-  )
+  );
 }

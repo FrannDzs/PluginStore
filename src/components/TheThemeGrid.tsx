@@ -1,22 +1,18 @@
-import { For } from 'solid-js';
-import { A } from 'solid-start';
-import { PluginStats } from './PluginStats';
+import { For } from "solid-js";
+import { A } from "solid-start";
+import { PluginStats } from "./PluginStats";
 
 interface Props {
-  themes: IPlugin[]
+  themes: IPlugin[];
 }
 
 export function TheThemeGrid(props: Props & ClassProp) {
-
   return (
-    <div class={"grid gap-8 grid-cols-1 md:grid-cols-2 relative " + props.class}>
-
-      <div
-        class="blur-[140px] h-[10rem] absolute top-[0rem] z-10 pointer-events-none w-[-webkit-fill-available]"
-      >
-        <div
-          class="w-full h-full bg-[linear-gradient(97.62deg,rgb(102_138_217_/_53%)_2.27%,rgba(26,214,255,0.22)_50.88%,rgb(131_0_220_/_60%)_98.48%)]"
-        />
+    <div
+      class={"grid gap-8 grid-cols-1 md:grid-cols-2 relative " + props.class}
+    >
+      <div class="blur-[140px] h-[10rem] absolute top-[0rem] z-10 pointer-events-none w-[-webkit-fill-available]">
+        <div class="w-full h-full bg-[linear-gradient(97.62deg,rgb(102_138_217_/_53%)_2.27%,rgba(26,214,255,0.22)_50.88%,rgb(131_0_220_/_60%)_98.48%)]" />
       </div>
 
       <For each={props.themes}>
@@ -28,9 +24,7 @@ export function TheThemeGrid(props: Props & ClassProp) {
               dark:hover:border-gray-600 dark:hover:bg-transparent"
           >
             <div>
-              <div
-                class="relative aspect-video -mx-4 -mt-4 overflow-hidden bg-gradient-to-r from-blue-400 to-teal-400 p-0 dark:p-3 dark:md:p-4"
-              >
+              <div class="relative aspect-video -mx-4 -mt-4 overflow-hidden bg-gradient-to-r from-blue-400 to-teal-400 p-0 dark:p-3 dark:md:p-4">
                 <A href={`/plugins/${item.slug}`}>
                   <picture class="object-cover">
                     <img
@@ -46,7 +40,10 @@ export function TheThemeGrid(props: Props & ClassProp) {
                 </A>
               </div>
               <p class="font-bold mt-4 flex items-center gap-2">
-                <A href={`/plugins/${item.slug}`} class="hover:text-green-400 text-xl">
+                <A
+                  href={`/plugins/${item.slug}`}
+                  class="hover:text-green-400 text-xl"
+                >
                   {item.name}
                 </A>
               </p>
@@ -56,6 +53,6 @@ export function TheThemeGrid(props: Props & ClassProp) {
           </article>
         )}
       </For>
-    </div >
-  )
+    </div>
+  );
 }

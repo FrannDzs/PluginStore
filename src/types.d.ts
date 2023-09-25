@@ -1,45 +1,45 @@
 interface IPlugin {
-  name: string
-  slug: string
-  description: string
-  image: string
+  name: string;
+  slug: string;
+  description: string;
+  image: string;
 
-  theme?: boolean
-  auto_update?: boolean
-  
-  tags?: Array<'ui' | 'utility' | 'theme' | 'tweakable' | 'fun'> | string[]
+  theme?: boolean;
+  auto_update?: boolean;
 
-  repo: string
-  readme?: string | false
+  tags?: Array<"ui" | "utility" | "theme" | "tweakable" | "fun"> | string[];
+
+  repo: string;
+  readme?: string | false;
 
   author: {
-    name: string
-    github?: string
-    social?: string
-    avatar?: string
-  }
+    name: string;
+    github?: string;
+    social?: string;
+    avatar?: string;
+  };
 
   // runtime stats
-  branch?: string
-  stars?: number
-  hearts?: number
-  downloads?: number
-  updated_at?: string
+  branch?: string;
+  stars?: number;
+  hearts?: number;
+  downloads?: number;
+  updated_at?: string;
 }
 
 interface ClassProp {
-  class: string
+  class: string;
 }
 
 interface ChildrenProp {
-  children: any
+  children: any;
 }
 
-declare module '*/registry/plugins.yml' {
+declare module "*/registry/plugins.yml" {
   const registry: {
-    name: string
-    version: string
-    plugins: IPlugin[]
-  }
+    name: string;
+    version: string;
+    plugins: IPlugin[];
+  };
   export default registry;
 }
